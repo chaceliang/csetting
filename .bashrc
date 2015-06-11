@@ -1,4 +1,4 @@
-## Share Config ##
+## bashrc ##
 
 set -o vi
 export EDITOR=vi
