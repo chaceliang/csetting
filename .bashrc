@@ -9,16 +9,6 @@ alias rm='rm -i'
 
 alias myip='ifconfig eth0 | grep inet | awk '"'"'{print $2}'"'"''
 
-# Show current git branch or hg bookmark
-export PS1='\u@\h:\W {$(_dotfiles_scm_info)}\$ '
-
-function parse_hg_branch {
-  if [[ -n $(_dotfiles_scm_info) ]]; then
-  # wrap in parens
-    echo "($(_dotfiles_scm_info))"
-  fi
-}
-
 # Show current hg bookmark
 function hgproml {
   # here are a bunch of colors in case
@@ -33,11 +23,10 @@ function hgproml {
   local RESET_COLOR="\[\033[0m\]"
 
   export PS1="\
-$GREEN[\u:\w$LIGHT_GRAY:\$(parse_hg_branch)$GREEN]\
+$GREEN[\u:\w$LIGHT_GRAY:\$()$GREEN]\
 \$$RESET_COLOR "
 PS2='> '
 PS4='+ '
 }
 hgproml
-PATH="$PATH:/Users/chaceliang/Downloads/flow/"
 
