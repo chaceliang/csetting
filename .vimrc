@@ -1,4 +1,3 @@
-" vimrc
 
 set shiftwidth=2
 set tabstop=2
@@ -14,3 +13,16 @@ highlight ColorColumn ctermbg=DarkGray
 
 syntax on
 color Dracula
+
+" vundle section
+" install: git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
+set nocompatible
+filetype off
+
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+Plugin 'jelera/vim-javascript-syntax'
+
+call vundle#end()
+filetype plugin indent on
