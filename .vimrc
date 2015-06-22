@@ -9,6 +9,9 @@ set number
 set autoindent
 set autochdir
 set colorcolumn=80
+set statusline+=\ %P
+set ic
+set hls is
 highlight ColorColumn ctermbg=DarkGray
 
 syntax on
@@ -23,6 +26,7 @@ set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
 
 Plugin 'jelera/vim-javascript-syntax'
+Plugin 'pangloss/vim-javascript'
 
 call vundle#end()
 filetype plugin indent on
