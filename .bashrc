@@ -23,7 +23,7 @@ function hgproml {
   local RESET_COLOR="\[\033[0m\]"
 
   export PS1="\
-$GREEN[\t:\w$LIGHT_GRAY:\$()$GREEN]\
+$GREEN[\t:\w$LIGHT_GRAY:\$(git branch 2>/dev/null | grep '^*' | colrm 1 2)$GREEN]\
 \$$RESET_COLOR "
 PS2='> '
 PS4='+ '
